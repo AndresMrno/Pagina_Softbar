@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="container col-lg-6" id="formulario">
+        <div class="card-header mb-4 fs-2 text-center" >
+            <h2>Formulario Domicilio</h2>
+        </div>
+        
+        <div class="card-body">
+        <form id="document">
+
+            <div class="form-group row">
+                <label for="id_pedido_fk" class="col-form-label col-sm-2">Estado</label>
+        
+                <select [(ngModel)]="domicilio.estado" class="form-control" name="id_pedido_fk">
+                    <option [ngValue]="undefined">Selecione un estado</option>
+                    <option>En preparacion</option>
+                    <option>En camino</option>
+                    <option>Cancelado</option>
+                </select>
+        
+            </div>
+        
+            <div class="mb-4">
+                <label for="" class="form-label">Fecha</label>
+                <input type="date" class="form-control" name="fecha" [(ngModel)]="domicilio.fecha"autocomplete="on" required="">
+            </div>
+        
+            <div class="mb-4">
+                <label for="" class="form-label">Hora</label>
+                <input type="time" class="form-control" name="hora" [(ngModel)]="domicilio.hora" autocomplete="on" required="">
+            </div>
+        
+            <div class="form-group row">
+                <label for="id_pedido_fk" class="col-form-label col-sm-2">Pedido</label>
+        
+                <select [(ngModel)]="domicilio.id_pedido_fk" class="form-control" name="id_pedido_fk">
+                    <option [ngValue]="undefined">Selecione un pedido</option>
+                    <option *ngFor="let pedido of pedidos" [ngValue]="pedido" autocomplete="on" > {{pedido.id_pedido}}  </option>
+        
+                </select>
+        
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" (click)="crearDomicilio()" *ngIf="!domicilio.id_domicilio" >Guardar</button>
+            <button type="submit" class="btn btn-primary" (click)="actualizarDomicilio()" *ngIf="domicilio.id_domicilio" >Guardar</button>
+
+        </form>
+        </div>
+        </div>
+
+    
+</body>
+</html>
+
