@@ -34,19 +34,6 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import { EnvioCorreoComponent } from './components/envio-correo/envio-correo.component';
-
-
-
-
-
-
-
- 
-
-
-
-
 
 
 
@@ -74,11 +61,6 @@ import { EnvioCorreoComponent } from './components/envio-correo/envio-correo.com
     CartComponent,
     ProductoComponent,
     ReservaComponent,
-    EnvioCorreoComponent,
-    
-
-
-
 
     
   ],
