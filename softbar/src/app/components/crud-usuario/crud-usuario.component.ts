@@ -2,7 +2,7 @@ import { TmplAstVariable } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { ExporterExcelService } from 'src/app/services/exporter/exporter-excel.service';
-import { UsuariosService } from 'src/app/services/usuarios.service';
+import { UsuariosService } from 'src/app/services/user/usuarios.service';
 import Swal from 'sweetalert2';
 
 @Component({

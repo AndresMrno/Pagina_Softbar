@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID,NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,19 +36,9 @@ import { ReservaComponent } from './components/reserva/reserva.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { EnvioCorreoComponent } from './components/envio-correo/envio-correo.component';
 
-
-
-
-
-
-
- 
-
-
-
-
-
-
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs);
 
 
 @NgModule({
@@ -75,12 +65,6 @@ import { EnvioCorreoComponent } from './components/envio-correo/envio-correo.com
     ProductoComponent,
     ReservaComponent,
     EnvioCorreoComponent,
-    
-
-
-
-
-    
   ],
   imports: [
     BrowserModule,
@@ -99,6 +83,10 @@ import { EnvioCorreoComponent } from './components/envio-correo/envio-correo.com
     FullCalendarModule,
   ],
   providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'es'
+    }
   ],
   bootstrap: [AppComponent]
 })

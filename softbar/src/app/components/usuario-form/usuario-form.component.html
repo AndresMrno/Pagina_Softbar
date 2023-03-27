@@ -18,27 +18,30 @@
         <form id="document">
             <div class="mb-4">
                 <label for="" class="form-label">Numero identidad</label>
-                <input type="number" class="form-control" name="identificacion" [(ngModel)]="usuario.identificacion" autocomplete="on" required="" disabled="">
+                <input type="number" class="form-control" name="identificacion" [(ngModel)]="usuario.identificacion" autocomplete="on" required="" [disabled]="isEdit" >
             </div>
         
             <div class="mb-4">
                 <label for="" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="nombre" [(ngModel)]="usuario.nombre"autocomplete="on" required="" disabled="" >
+                <input type="text" class="form-control" name="nombre" [(ngModel)]="usuario.nombre"autocomplete="on" required="" >
             </div>
         
             <div class="mb-4">
                 <label for="" class="form-label">Apellido</label>
-                <input type="text" class="form-control" name="apellido" [(ngModel)]="usuario.apellido" autocomplete="on" required="" disabled="">
+                <input type="text" class="form-control" name="apellido" [(ngModel)]="usuario.apellido" autocomplete="on" required="" >
             </div>
         
             <div class="mb-4">
                 <label for="" class="form-label">fecha nacimiento</label>
-                <input id="fecha_nacimiento" type="date" class="form-control" name="fecha_nacimiento" autocomplete="on" [(ngModel)]="usuario.fecha_nacimiento" required="" disabled="" > 
+
+                  <input id="fecha_nacimiento" type="date" class="form-control" name="fecha_nacimiento" autocomplete="on" [(ngModel)]="usuario.fecha_nacimiento" [disabled]="isEdit"> 
+                
+
             </div>
 
             <div class="mb-4">
                 <label for="" class="form-label">edad</label>
-                <input id="edad" type="number" class="form-control" name="edad" autocomplete="on" [(ngModel)]="usuario.edad" required="" disabled=""> 
+                <input id="edad" type="number" class="form-control" name="edad" autocomplete="on" [(ngModel)]="usuario.edad" required="" [disabled]="isEdit"> 
             </div>
 
             <div class="mb-4">
@@ -64,19 +67,16 @@
             <div class="form-group row">
                 <label for="ciudad" class="col-form-label col-sm-2">Rol</label>
         
-                <select [(ngModel)]="usuario.id_rol" class="form-control" name="id_rol">
-                    <option [ngValue]="undefined">Selecione un rol</option>
-                    <option *ngFor="let rol of roles" [ngValue]="rol" autocomplete="on" > {{rol.nombre_rol}}  </option>
-        
+                <select [(ngModel)]="usuario.id_rol" class="form-control" name="id_rol" >
+                    <option [ngValue]="null" disabled>Selecione un rol</option>
+                    <option *ngFor="let rol of roles" [ngValue]="rol" [selected]="usuario.id_rol == rol.id_rol" > {{rol.nombre_rol}}  </option>
                 </select>
         
             </div>
-
-
         
         
-            <button type="submit" class="btn btn-primary" (click)="crearUsuario()" *ngIf="!usuario.id_usuario" >Guardar</button>
-            <button type="submit" class="btn btn-primary" (click)="actualizarUsuario()" *ngIf="usuario.id_usuario" >Guardar</button>
+            <button type="submit" class="btn btn-primary" (click)="crearUsuario()" *ngIf="!isEdit" >Guardar</button>
+            <button type="submit" class="btn btn-primary" (click)="actualizarUsuario()" *ngIf="isEdit" >Actualizar</button>
         </form>
         </div>
         </div>

@@ -1,2 +1,2 @@
-let baserUrl ='http://localhost:8083';
+export const baserUrl ='http://localhost:8083';
 export default baserUrl;
