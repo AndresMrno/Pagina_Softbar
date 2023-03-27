@@ -35,7 +35,6 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { EnvioCorreoComponent } from './components/envio-correo/envio-correo.component';
-
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEs);

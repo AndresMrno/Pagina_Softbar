@@ -7,7 +7,6 @@ import { CrudReservaComponent } from './components/crud-reserva/crud-reserva.com
 import { CrudUsuarioComponent } from './components/crud-usuario/crud-usuario.component';
 import { CrudVentaDomicilioComponent } from './components/crud-venta-domicilio/crud-venta-domicilio.component';
 import { DomicilioFormComponent } from './components/domicilio-form/domicilio-form.component';
-import { EnvioCorreoComponent } from './components/envio-correo/envio-correo.component';
 import { InventarioFormComponent } from './components/inventario-form/inventario-form.component';
 import { PedidoFormComponent } from './components/pedido-form/pedido-form.component';
 import { ReservaFormComponent } from './components/reserva-form/reserva-form.component';
@@ -132,10 +131,6 @@ const routes: Routes = [
     component: ReservaComponent,
   },
 
-  {
-    path : 'enviar',
-    component: EnvioCorreoComponent,
-  },
 
 
 
